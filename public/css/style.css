@@ -1,0 +1,142 @@
+/* Header */
+
+.header {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.header .inner-logo img {
+    max-width: 100%;
+    max-height: 50px;
+}
+
+.header .inner-menu>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.header .inner-menu>ul>li {
+    margin-left: 20px;
+}
+
+/* End Header */
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff ;
+    text-align: center;
+    padding: 10px;
+}
+
+/* End Footer */
+
+
+/* Container margin */
+.container.my-3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Row styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+/* Full-width column for header */
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* Header box styling */
+.box-head {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.box-head .inner-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Column for each product item */
+.col-4.mb-3 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Product item styling */
+.product-item {
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Image container */
+.inner-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+/* Content within the product item */
+.inner-content {
+    padding: 0.5rem;
+}
+
+/* Title within the product item */
+.inner-content .inner-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #007bff;
+}
+
+/* New price styling */
+.inner-price-new {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #28a745;
+    margin: 0.5rem 0;
+}
+
+/* Old price styling */
+.inner-price-old {
+    font-size: 1rem;
+    color: #6c757d;
+    text-decoration: line-through;
+    margin: 0.5rem 0;
+}
+
+/* Discount styling */
+.inner-discount {
+    font-size: 1rem;
+    color: #dc3545;
+    margin: 0.5rem 0;
+}
+
