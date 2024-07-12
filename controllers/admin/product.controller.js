@@ -61,7 +61,6 @@ module.exports.changeStatus = async (req, res) => {
 
     await Product.updateOne({ _id: id }, { status: status });
 
-    // res.send(`${status} - ${id}`)
-    // res.redirect("/admin/products")
+    //chuyển hướng trang
     res.redirect("back")
 }

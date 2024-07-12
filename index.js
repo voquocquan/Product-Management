@@ -1,11 +1,13 @@
 
 const express = require('express') ;
+
+const methodOverride = require('method-override');
 require("dotenv").config();
 
 
 const database = require("./config/database");
 
-const systemConfix = require("./config/system")
+const systemConfix = require("./config/system");
 
 //import
 const routeAdmin = require("./routers/admin/index.route");
@@ -15,6 +17,8 @@ database.connect();
 
 const app = express();
 const port = process.env.PORT;
+
+app.use(methodOverride('_method'))
 
 app.set('views', './views');  
 app.set('view engine', 'pug');
