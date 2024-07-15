@@ -1,7 +1,6 @@
-
-const express = require('express') ;
-
+const express = require('express');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 require("dotenv").config();
 
 
@@ -20,7 +19,10 @@ const port = process.env.PORT;
 
 app.use(methodOverride('_method'))
 
-app.set('views', './views');  
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.set('views', './views');
 app.set('view engine', 'pug');
 
 //App Locals Variable
@@ -35,6 +37,6 @@ route(app);
 
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`) ;
+    console.log(`Example app listening on port ${port}`);
 });
 
