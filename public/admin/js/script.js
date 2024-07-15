@@ -100,7 +100,7 @@ if (checkboxMulti) {
 // End Checkbox Multi
 
 // Form Change Multi
-const formChangeMulti = document.querySelector("[form-change-multi]")
+const formChangeMulti = document.querySelector("[form-change-multi]");
 if (formChangeMulti) {
     formChangeMulti.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -147,3 +147,20 @@ if (formChangeMulti) {
 
 }
 // End Form Change Multi
+
+//Show alert
+const showAlert = document.querySelector("[show-alert]");
+if (showAlert) {
+    const time = parseInt(showAlert.getAttribute("data-time"));
+    const closeAlert = showAlert.querySelector("[close-alert]")
+
+    setTimeout(() => {
+        showAlert.classList.add("alert-hidden");
+    },time);
+
+    closeAlert.addEventListener("click", () => {
+        showAlert.classList.add("alert-hidden");
+    })
+}
+
+//End Show alert
