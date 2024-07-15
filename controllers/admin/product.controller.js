@@ -94,7 +94,6 @@ module.exports.changeMulti = async (req, res) => {
                     deleted: "true",
                     deleteAt: new Date(),
                 },
-                
             )
             break;
 
