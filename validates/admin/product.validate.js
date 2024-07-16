@@ -6,4 +6,3 @@ module.exports.createPost = (req, res, next) => {
     }
     next();
 }
-
