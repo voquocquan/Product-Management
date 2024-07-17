@@ -20,3 +20,27 @@ const products = await Product.find({
         products: newProducts
     });
 };
+
+
+// [GET]  /products/:slug
+module.exports.detail = async (req, res) => {
+    try {
+        const find = {
+            deleted: false,
+            slug: req.params.slug,
+            status: "active"
+        };
+
+        const product = await Product.findOne(find);
+
+        console.log(product);
+
+        res.render("client/pages/products/detail", {
+            pageTitle: product.title,
+            product: product
+        });
+    } catch (error) {
+        // req.flash("error", `Không tìm thấy trang!`);
+        res.redirect(`/products`);
+    }
+};
