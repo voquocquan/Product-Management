@@ -1,0 +1,14 @@
+extends ../../layouts/default.pug
+
+
+block main
+    if (data.title) 
+        h3(class="mb-4") Tên nhóm quyền: #{ data.title}
+
+    if (data.description) 
+        h3(class="mb-4") Nội dung: #{data.description}
+
+    a(
+        href=`${preFixAdmin}/roles/edit/${data.id}`
+        class="btn btn-warning"
+    ) Chỉnh sửa
