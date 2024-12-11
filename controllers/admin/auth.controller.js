@@ -8,7 +8,7 @@ module.exports.login = (req, res) => {
     res.render("admin/pages/auth/login.pug", {
         pageTitle: "Đăng nhập"
     });
-}
+};
 
 // [POST]   /admin/auth/login
 module.exports.loginPost = async (req, res) => { 
@@ -40,4 +40,10 @@ module.exports.loginPost = async (req, res) => {
 
     res.cookie("token", user.token);
     res.redirect(`${systemConfig.preFixAdmin}/dashboard`);
+};
+
+// [GET]   /admin/auth/logout
+module.exports.logout = (req, res) => {
+    res.clearCookie("token");
+    res.redirect(`${systemConfig.preFixAdmin}/auth/login`);
 }
