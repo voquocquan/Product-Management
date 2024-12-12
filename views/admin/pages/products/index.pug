@@ -5,6 +5,7 @@ include ../../mixins/pagination.pug
 include ../../mixins/form-change-multi.pug
 include ../../mixins/alert.pug
 include ../../mixins/sort.pug
+include ../../mixins/moment.pug
 
 block main
 
@@ -64,6 +65,7 @@ block main
                                 th Giá
                                 th Vị trí
                                 th Trạng thái
+                                th Người tạo
                                 th Hành động
                         tbody
                             each item,index in products
@@ -112,7 +114,12 @@ block main
                                                     button-change-status
                                                     class="badge badge-danger"
                                                 ) Dừng hoạt động
-                                        
+
+                                    td 
+                                        p #{item.accountFullName}
+                                        p
+                                            +formatDateTime(item.createdBy.createdAt)
+
                                         
                                     td
                                         a(
