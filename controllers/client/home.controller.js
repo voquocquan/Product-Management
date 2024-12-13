@@ -9,14 +9,26 @@ module.exports.index = async (req, res) => {
         featured: "1",
         deleted: false,
         status: "active"
-    }).limit(6);
+    }).limit(3);
 
-    const newProducts = productsHelper.priceNewProduct(productsFeatured);
+    const newProductsFeatured = productsHelper.priceNewProduct(productsFeatured);
     
     //End Sản phẩm nổi bật
 
+    //Sản phẩm mới nhất
+    const productsNew = await Product.find({
+        deleted: false,
+        status: "active"
+    }).sort({ position: "desc"}).limit(6);
+
+    const newProductsNew = productsHelper.priceNewProduct(productsNew);
+
+    //end Sản phẩm mới nhất
+
     res.render("client/pages/home/index.pug", {
         pageTitle: "Trang chủ",
-        productsFeatured: newProducts
+        productsFeatured: newProductsFeatured,
+        productsNew: newProductsNew
+
     })
 }
