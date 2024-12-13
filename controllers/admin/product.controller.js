@@ -78,11 +78,8 @@ module.exports.index = async (req, res) => {
             updatedBy.accountFullName = userUpdate.fullName
         }
         
-        console.log(product);
-        
     };
 
-    
     res.render("admin/pages/products/index.pug", {
         pageTitle: "Trang sản phẩm",
         products: products,
