@@ -8,6 +8,7 @@ const productCategoryRouters = require("./product-category.route");
 const roleRouters = require("./role.route");
 const accountRouters = require("./account.route");
 const authRouters = require("./auth.route");
+const myAccountRouters = require("./my-account.route");
 
 module.exports = (app) => {
     const PATCH_ADMIN = systemConfig.preFixAdmin;
@@ -43,4 +44,10 @@ module.exports = (app) => {
     );
 
     app.use(PATCH_ADMIN + "/auth", authRouters);
+
+    app.use(
+        PATCH_ADMIN + "/my-account", 
+        authMiddleware.requireAuth, 
+        myAccountRouters
+    );
 }
