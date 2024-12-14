@@ -2,6 +2,7 @@ const categoryMiddleware = require("../../middlewares/client/category.middleware
 
 const productsRouters = require("./products.route")
 const homeRouters = require("./home.route")
+const searchRouters = require("./search.route")
 
 module.exports = (app) => {
     app.use(categoryMiddleware.category)
@@ -9,4 +10,6 @@ module.exports = (app) => {
     app.use('/', homeRouters)
     
     app.use("/products", productsRouters) 
+
+    app.use("/search", searchRouters) 
 }

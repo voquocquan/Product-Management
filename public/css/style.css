@@ -54,9 +54,12 @@
     border-radius: 8px;
     overflow: hidden;
     height: 100%;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /*Hiệu ứng chuyển động mượt*/
 }
 .product-item:hover{
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Đẩy lên 10px */
+
 }
 .product-item .inner-image {
     width: 100%;
@@ -162,6 +165,7 @@
 .product-detail .inner-title{
     font-size: 32px;
     margin-bottom: 5px;
+    height: 100%;
 }
 .product-detail .inner-category{
     margin-bottom: 10px;
