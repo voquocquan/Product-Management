@@ -64,4 +64,4 @@ module.exports.category = async (req, res) => {
         pageTitle: category.title,
         products: newProducts
     });
-};
+}
