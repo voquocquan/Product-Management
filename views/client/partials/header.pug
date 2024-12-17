@@ -8,7 +8,7 @@ header.header
                     a(href="/")
                         img(src="/images/seagame.png", alt="Logo")
 
-            .col-5
+            .col-3
                 form(
                     action="/search"
                     method="GET"
@@ -26,7 +26,7 @@ header.header
                             class="btn btn-primary"
                         )   Tìm
 
-            .col-4
+            .col-6
                 .inner-menu     
                     ul 
                         li 
@@ -39,3 +39,6 @@ header.header
 
                         li  
                             a(href="/cart") Giỏ hàng (#{ miniCart ? miniCart.totalQuantity : 0})
+
+                        li  
+                            a(href="/user/register") Đăng ký
