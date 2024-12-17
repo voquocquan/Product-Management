@@ -67,10 +67,6 @@ module.exports.order = async (req, res) => {
     products.push(objectProduct);
   }
 
-  console.log(cartId);
-  console.log(userInfo);
-  console.log(products);
-
   const orderInfo = {
     cartId: cartId,
     userInfo: userInfo,
