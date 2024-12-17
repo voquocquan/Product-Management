@@ -27,6 +27,7 @@
     "pug": "^3.0.3",
     "req-flash": "^0.0.3",
     "streamifier": "^0.1.1",
+    "sweetalert2": "^11.15.1",
     "tinymce": "^7.3.0"
   }
 }
