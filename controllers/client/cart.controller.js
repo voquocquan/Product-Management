@@ -23,12 +23,12 @@ module.exports.index = async (req, res) => {
 
       item.productInfo = productInfo;
 
-      item.totalPrice = productInfo.priceNew * item. quantity;
+      item.totalPrice = productInfo.priceNew * item.quantity;
     }
   }
 
   cart.totalPrice = cart.products.reduce((sum, item) => sum + item.totalPrice, 0);
-  
+
 
   res.render("client/pages/cart/index", {
     pageTitle: "Giỏ hàng",
@@ -88,7 +88,6 @@ module.exports.addPost = async (req, res) => {
 
 // [GET]  /cart/delete/:productId
 module.exports.delete = async (req, res) => {
-  console.log(req.params.productId);
   const cartId = req.cookies.cartId;
   const productId = req.params.productId;
 
@@ -96,9 +95,32 @@ module.exports.delete = async (req, res) => {
     _id: cartId
   }, {
     $pull: { products: { product_id: productId } }
-    });
+  });
 
   req.flash("success", "Đã xoá sản phẩm khỏi giỏ hàng!")
+
+  res.redirect("back");
+};
+
+// [GET]  /cart/update/:productId/:quantity
+module.exports.update = async (req, res) => {
+  const cartId = req.cookies.cartId;
+  const productId = req.params.productId;
+  const quantity = req.params.quantity;
+
+  await Cart.updateOne(
+    {
+    _id: cartId,
+    "products.product_id": productId
+    }, 
+    {
+      $set: {
+        "products.$.quantity": quantity
+      }
+    }
+  );
+
+  req.flash("success", "Cập nhật số lượng thành công!")
 
   res.redirect("back");
 }
