@@ -1,0 +1,40 @@
+extends ../../layouts/default.pug
+include ../../mixins/box-head.pug
+
+block main 
+
+  .container.my-3 
+    .row 
+      .col-12 
+        +box-head("Chat")
+
+    .row 
+      .col-12 
+        .chat 
+          .inner-body 
+            .inner-incoming 
+              .inner-name Em Yêu 
+              .inner-content 
+                | A ơi sang nhà em nha, This project combines multiple open source projects to create a simple user interface for web developers that are using pug in their web projects. We're using "Bootstrap" as base template using a free "Boostwatch" template. The code-editors are based on "Ace" and the backend is running "html2pug" and "html2jade" plugins to convert your html content to pug syntax. You find a list of included projects/licenses here.
+            .inner-outcoming
+              .inner-content 
+                | OK
+            .inner-incoming 
+              .inner-name Em Yêu 
+              .inner-content 
+                | A ơi sang nhà em nha,
+            .inner-outcoming
+              .inner-content 
+                | OK
+          .inner-foot 
+            form(
+              class="inner-form"
+              action=""
+            )
+              input(
+                type="text"
+                placeholder="Nhập nội dung..."
+                name="content"
+              )
+              button 
+                i.fas.fa-paper-plane
