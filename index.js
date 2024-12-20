@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('express-flash');
 const moment = require('moment');
+const http = require('http');
+const { Server } = require("socket.io");
+
 
 require("dotenv").config();
 
@@ -21,6 +24,13 @@ database.connect();
 
 const app = express();
 const port = process.env.PORT;
+
+//Socket.io
+const server = http.createServer(app);
+const io = new Server(server);
+io.on('connection', (socket) => {
+    console.log('a user connected', socket.id);
+});
 
 app.use(methodOverride('_method'))
 
@@ -60,7 +70,7 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
 
