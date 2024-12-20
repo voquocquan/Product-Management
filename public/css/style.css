@@ -275,12 +275,12 @@
     word-wrap: break-word;
 }
 
-.chat .inner-outcoming {
+.chat .inner-outcoming{
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-    max-width: 40%;
     background-color: #FE5DA3;
+    width: 40%;
     padding: 10px;
     border-radius: 10px 10px 0 10px;
     color: #fff;
