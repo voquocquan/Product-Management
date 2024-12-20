@@ -331,5 +331,15 @@
 }
 /* ENd Chat */
 
+/* emoji icon */
+.tooltip{
+    visibility: hidden;
+}
+
+.tooltip.shown{
+    visibility: visible;
+    opacity: 1;
+}
+/* END emoji icon */
 
     
