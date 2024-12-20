@@ -53,6 +53,11 @@ app.use(express.static(`${__dirname}/public`));
 //Router
 routeAdmin(app);
 route(app);
+app.get("*", (req, res) => {
+    res.render("client/pages/errors/404", {
+        pagesTitle: "404 Not Found"
+    });
+});
 
 
 app.listen(port, () => {

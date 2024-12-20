@@ -1,0 +1,56 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title 404 Not Found
+  style.
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+    }
+    .container {
+    text-align: center;
+    }
+    .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #ff6f61;
+    }
+    .message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    }
+    .home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    .home-button:hover {
+    background-color: #e55b50;
+    }
+    .illustration {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    }
+.container
+  .error-code 404
+  p.message Oops! The page you are looking for doesn't exist.
+  button(
+    class="home-button"
+    onclick="history.back()"
+  ) Back
