@@ -1,19 +1,20 @@
 extends ../../layouts/default.pug
+include ../../mixins/moment.pug
 
 block main 
-    h1(class="mb-4") Danh sách tài khoản
+    h1(class="mb-4") Danh sách tài khoản người dùng
 
     .card.mb-3
       .card-header Danh sách
       .card-body
         .row 
           .col-8
-          .col-4.text.right
+          //- .col-4.text.right
             
-              a(
-                href=`${preFixAdmin}/users/create`
-                class="btn btn-outline-success"
-              ) + Thêm mới
+          //-     a(
+          //-       href=`${preFixAdmin}/users/create`
+          //-       class="btn btn-outline-success"
+          //-     ) + Thêm mới
 
         table(
           class="table table-hover table-sm"
@@ -26,6 +27,7 @@ block main
               th Email
               th Mật khẩu
               th Trạng thái
+              th Ngày tạo
               th Hành động
 
           tbody
@@ -64,15 +66,16 @@ block main
                           class="badge badge-danger"
                       ) Dừng hoạt động
                     
-                    
+                td 
+                  +formatDateTime(item.createdAt)
                 td
                     a(
-                        href=`${preFixAdmin}/user/detail/${item.id}`
+                        href=`${preFixAdmin}/users/detail/${item.id}`
                         class="btn btn-secondary btn-sm"
                     ) Chi tiết
                     
                         a(
-                            href=`${preFixAdmin}/user/edit/${item.id}`
+                            href=`${preFixAdmin}/users/edit/${item.id}`
                             class="btn btn-warning btn-sm"
                         ) Sửa
                     

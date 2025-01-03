@@ -1,0 +1,27 @@
+extends ../../layouts/default.pug
+
+block main 
+    h1(class="mb-4") Thông tin chi tiết
+    div
+      if(user.fullName)
+        div(class="mb-4") <b> Họ tên:</b>  #{user.fullName} 
+
+      if(user.email)
+        div(class="mb-4")  <b> Email: </b> #{user.email}
+
+      if (user.status)
+        div(class="mb-4")
+            span <b>Trạng thái: </b>
+            if (user.status === "active")
+                span(class="badge badge-success") Hoạt động
+            else
+                span(class="badge badge-danger") Dừng hoạt động
+
+      if(user.createdAt)
+      div(class="mb-4") <b>Ngày tạo:</b> #{user.createdAt} 
+
+      a(
+        href=`${preFixAdmin}/users/edit/${user.id}`
+        class="btn btn-warning"
+      ) Chỉnh sửa
+      

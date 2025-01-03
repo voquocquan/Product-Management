@@ -109,7 +109,7 @@ module.exports.editPatch = async (req, res) => {
     res.redirect("back");
 };
 
-// [PATCH]   /admin/accounts/detail/:id
+// [GET]   /admin/accounts/detail/:id
 module.exports.detail = async (req, res) => {
     try {
         const find = {
