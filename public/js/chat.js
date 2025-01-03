@@ -73,7 +73,7 @@ const showTyping = () => {
 
   timeOut = setTimeout(() => {
     socket.emit("CLIENT_SEND_TYPING", "hidden");
-  }, 3000);
+  }, 2000);
 }
 
 // ENd Show Typing

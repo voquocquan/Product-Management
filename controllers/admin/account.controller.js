@@ -108,3 +108,24 @@ module.exports.editPatch = async (req, res) => {
     }
     res.redirect("back");
 };
+
+// [PATCH]   /admin/accounts/detail/:id
+module.exports.detail = async (req, res) => {
+    try {
+        const find = {
+            deleted: false,
+            _id: req.params.id
+        };
+
+        const product = await Account.findOne(find);
+
+        res.render("admin/pages/accounts/detail", {
+            
+            pageTitle: product.title,
+            product: product
+        });
+    } catch (error) {
+        // req.flash("error", `Không tìm thấy trang!`);
+        res.redirect(`${systemConfig.preFixAdmin}/accounts`);
+    }
+};
