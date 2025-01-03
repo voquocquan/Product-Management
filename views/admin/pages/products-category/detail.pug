@@ -1,0 +1,27 @@
+extends ../../layouts/default.pug
+
+
+block main
+
+      if (productCategory.title) 
+        div(class="mb-4") #{productCategory.title}
+
+      if (productCategory.thumbnail)
+          div(class="mb-4")
+              img(
+                  src=productCategory.thumbnail
+                  style="width: 300px"
+              )
+
+      if (productCategory.status)
+          div(class="mb-4")
+              span Trạng thái:
+              if (productCategory.status === "active")
+                  span(class="badge badge-success") Hoạt động
+              else
+                  span(class="badge badge-danger") Dừng hoạt động
+
+      a(
+          href=`${preFixAdmin}/products-category/edit/${productCategory.id}`
+          class="btn btn-warning"
+      ) Chỉnh sửa
